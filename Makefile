@@ -17,6 +17,8 @@ CFLAGS =
 SRCS = pre_error_check.c \
 prepare_list.c \
 controls.c \
+controls_2.c \
+funcs_for_sort.c \
 sorts.c \
 quick_sort.c \
 push_swap.c

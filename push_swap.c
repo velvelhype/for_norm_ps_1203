@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-void	free_lists(t_list* a_head, t_list* b_head)
+void	free_lists(t_list *a_head, t_list *b_head)
 {
 	a_head = a_head ->prev;
-	while(a_head->is_dummy == FALSE)
+	while (a_head->is_dummy == FALSE)
 	{
 		a_head = a_head->prev;
 		free(a_head->next);
@@ -12,10 +12,10 @@ void	free_lists(t_list* a_head, t_list* b_head)
 	free(b_head);
 }
 
-void    free_copy(t_list *copy)
+void	free_copy(t_list *copy)
 {
 	copy = copy ->prev;
-	while(copy->is_dummy == FALSE)
+	while (copy->is_dummy == FALSE)
 	{
 		copy = copy->prev;
 		free(copy->next);
@@ -23,30 +23,30 @@ void    free_copy(t_list *copy)
 	free(copy);
 }
 
-void    is_int(t_list *a_head)
+void	is_int(t_list *a_head)
 {
 	a_head = a_head->next;
-	while(a_head->is_dummy == FALSE)
+	while (a_head->is_dummy == FALSE)
 	{
 		a_head = a_head->next;
 	}
 }
 
-void    post_error_check(t_list *a_head, t_list *b_head)
+void	post_error_check(t_list *a_head, t_list *b_head)
 {
 	check_duplicates(a_head);
-	if(is_sorted(a_head) == TRUE)
+	if (is_sorted(a_head) == TRUE)
 	{
 		free_lists(a_head, b_head);
 		exit(1);
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_list  *a_head;
-	t_list  *a_copy;
-	t_list  *b_head;
+	t_list	*a_head;
+	t_list	*a_copy;
+	t_list	*b_head;
 
 	pre_error_check(argc, argv);
 	a_head = prepare_a_list(argc, argv, a_head);
@@ -64,5 +64,5 @@ int main(int argc, char **argv)
 	else
 		start_q_sort(a_head, b_head);
 	free_lists(a_head, b_head);
-	return 0;
+	return (0);
 }

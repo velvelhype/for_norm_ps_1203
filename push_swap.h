@@ -20,7 +20,6 @@ typedef struct t_list
     int sort_status;
 } t_list;
 
-
 //pre_error_check
 void    error_case();
 void    pre_error_check(int argc, char **argv);
@@ -40,16 +39,19 @@ void    swap(t_list* head);
 void    push(t_list* a_head, t_list* b_head);
 void    rotate(t_list *head);
 void    r_rotate(t_list *head);
+t_list* cut_out_list(t_list *cut);
+void    implant(t_list *pushing_list, t_list *dst);
 
 //sort
-void    two_sort(t_list *dum);
 int     is_sorted(t_list *a_head);
-void    push_min(t_list    *a_head, t_list *b_head);
-t_list* find_min(t_list *list);
-t_list* find_min_ranged(int range, t_list *list);
-int     len_list(t_list*    head);
+void    two_sort(t_list *dum);
 void    three_sort(t_list *dum);
 void    five_sort(t_list    *a_head, t_list *b_head);
+
+//funcs_for_sort
+void    push_min(t_list    *a_head, t_list *b_head);
+t_list* find_min(t_list *list);
+int     len_list(t_list*    head);
 
 // 2
 void    start_q_sort(t_list *a_head, t_list *b_head);
