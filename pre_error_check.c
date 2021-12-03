@@ -8,8 +8,8 @@ void    error_case()
 
 long    custom_atoi(const char *str)
 {
-	long	i;
 	long	sum;
+	long	i;
 	long    j;
 
 	sum = 0;
@@ -73,8 +73,6 @@ void    pre_error_check(int argc, char **argv)
 
 void    check_duplicates(t_list *list)
 {
-    // printf("c_p\n");
-    //illegal_stack_check(list);
     list = list->next;
     t_list  *cur_list = list->next;
 

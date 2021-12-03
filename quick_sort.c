@@ -15,7 +15,7 @@ int     ship_amount(int pivot, t_list *head)
     return (ship_count);
 }
 
-void    init(t_list *a_head, t_list *b_head)
+void    start_q_sort(t_list *a_head, t_list *b_head)
 {
     int pivot;
     int len;
@@ -50,17 +50,12 @@ void     cut_half(t_list *a_head, t_list *b_head)
     pivot = (find_min(b_head))->value + len_list(b_head) / 2;
     shipment = ship_amount(pivot, b_head);
     ruminant_count = shipment;
-
-    // printf("cut! %d\n", pivot);
-    // check_stacks(b_head);
-
     while(shipment)
     {
         if ((b_head->next)->value > pivot)
         {
             push(b_head, a_head);
             shipment--;
-            
         }
         else if(b_head->next == find_min(b_head))
         {
@@ -74,19 +69,10 @@ void     cut_half(t_list *a_head, t_list *b_head)
     ruminant(ruminant_count, a_head, b_head);
 }
 
-int     next_pivot(int range, t_list* head)
-{
-    int pivot;
-
-    pivot = (find_min_ranged(range, head))->value + range / 2;
-    return (pivot);
-}
-
 void    ruminant(int ruminant_count, t_list *a_head, t_list *b_head)
 {
     int is_cleanable;
     int pivot;
-
 
     while(ruminant_count--)
     {
@@ -113,9 +99,4 @@ void    process_b(t_list *a_head, t_list *b_head)
         clean_up(a_head, b_head);
     else
         cut_half(a_head, b_head);
-}
-
-void    quick_sort_2(t_list *a_head, t_list *b_head)
-{
-    init(a_head, b_head);
 }

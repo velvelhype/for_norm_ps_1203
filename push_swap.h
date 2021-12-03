@@ -52,7 +52,7 @@ void    three_sort(t_list *dum);
 void    five_sort(t_list    *a_head, t_list *b_head);
 
 // 2
-void    quick_sort_2(t_list *a_head, t_list *b_head);
+void    start_q_sort(t_list *a_head, t_list *b_head);
 void    process_b(t_list *a_head, t_list *b_head);
 void    ruminant(int ruminant_count, t_list *a_head, t_list *b_head);
 
