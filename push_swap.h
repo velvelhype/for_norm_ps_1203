@@ -35,7 +35,6 @@ void    tend_values(int len, t_list* list, t_list *ranking);
 //post_process
 void    check_duplicates(t_list *list);
 
-
 //controls
 void    swap(t_list* head);
 void    push(t_list* a_head, t_list* b_head);
@@ -56,11 +55,5 @@ void    five_sort(t_list    *a_head, t_list *b_head);
 void    quick_sort_2(t_list *a_head, t_list *b_head);
 void    process_b(t_list *a_head, t_list *b_head);
 void    ruminant(int ruminant_count, t_list *a_head, t_list *b_head);
-
-// check_funcs
-void    check_stacks(t_list *a_dummy, t_list *b_dummy);
-void    check_stack(t_list *a_head);
-void    check_stack_r(t_list *a_head);
-void    check_link(t_list *a_head);
 
 #endif

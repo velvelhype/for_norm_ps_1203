@@ -14,13 +14,12 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Werror -Wall -Wextra
 CFLAGS =
-SRCS = checks.c \
-pre_error_check.c \
-controls.c \
+SRCS = pre_error_check.c \
 prepare_list.c \
-push_swap.c \
+controls.c \
 sorts.c \
-quick_sort_2.c
+quick_sort.c \
+push_swap.c
 
 OBJS = $(SRCS:.c=.o)
 

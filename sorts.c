@@ -156,7 +156,6 @@ void    push_min(t_list *a_head, t_list *b_head)
         else
             r_rotate(a_head);
         
-        check_stacks(a_head, b_head);
     }
 }
 
@@ -173,5 +172,4 @@ void    five_sort(t_list    *a_head, t_list *b_head)
     }
     if((a_head->next)->value > ((a_head->next)->next)->value)
         swap(a_head);
-    check_stacks(a_head, b_head);
 }
