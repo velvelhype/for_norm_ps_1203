@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		flvlen(char const *s, char c)
+int	flvlen(char const *s, char c)
 {
 	int	len;
 
@@ -35,7 +35,7 @@ int		flvlen(char const *s, char c)
 	return (len);
 }
 
-int		sizeslv(char const *s, char c)
+int	sizeslv(char const *s, char c)
 {
 	int	i;
 
@@ -72,7 +72,8 @@ char	**slvfiller(char const *s, char **lvs, char c)
 			s++;
 		if (*s)
 		{
-			if (!(lvs[j] = (char*)malloc(sizeof(char) * (sizeslv(s, c) + 1))))
+			lvs[j] = (char *)malloc(sizeof(char) * (sizeslv(s, c) + 1));
+			if (!(lvs[j]))
 				return (free_lvs(lvs, j));
 			ft_strlcpy(lvs[j], s, (sizeslv(s, c) + 1));
 			i++;
@@ -93,7 +94,8 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	len = flvlen(s, c);
-	if (!(dst = (char **)malloc(sizeof(char *) * len + 1)))
+	dst = (char **)malloc(sizeof(char *) * len + 1);
+	if (!dst)
 		return (NULL);
 	return (slvfiller(s, dst, c));
 }

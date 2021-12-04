@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_digitmaker(int n)
+int	ft_digitmaker(int n)
 {
-	int digit;
+	int	digit;
 
 	if (n == -2147483648)
 		return (11);
@@ -36,9 +36,10 @@ int		ft_digitmaker(int n)
 
 char	*ft_minkiller(void)
 {
-	char *str;
+	char	*str;
 
-	if (!(str = (char *)malloc(sizeof(char) * (12))))
+	str = (char *)malloc(sizeof(char) * (12));
+	if (!str)
 		return (NULL);
 	str[0] = '-';
 	str[1] = '2';
@@ -65,7 +66,8 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_minkiller());
 	digit = ft_digitmaker(n);
-	if (!(str = (char *)malloc(sizeof(char) * (digit + 1))))
+	str = (char *)malloc(sizeof(char) * (digit + 1));
+	if (!str)
 		return (NULL);
 	str[digit] = '\0';
 	if (n < 0)

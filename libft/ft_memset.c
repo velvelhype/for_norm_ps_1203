@@ -17,7 +17,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	int				i;
 	unsigned char	*censored;
 
-	censored = (unsigned char*)b;
+	censored = (unsigned char *)b;
 	i = 0;
 	while (len > 0)
 	{
