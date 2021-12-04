@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	if (c == '\0')

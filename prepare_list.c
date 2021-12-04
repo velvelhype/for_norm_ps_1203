@@ -56,7 +56,7 @@ int	compare_val(t_list *list, int warrior)
 	return (win);
 }
 
-void	tend_values(int len, t_list	*list_head, t_list *src_head)
+void	tend_values(t_list	*list_head, t_list *src_head)
 {
 	t_list	*list;
 	t_list	*src;

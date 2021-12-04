@@ -16,7 +16,6 @@ void	two_sort(t_list *dum)
 {
 	t_list	*one;
 	t_list	*two;
-	int		save;
 
 	one = dum->next;
 	two = one->next;

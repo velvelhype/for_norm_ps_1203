@@ -70,9 +70,6 @@ void	cut_half(t_list *a_head, t_list *b_head)
 
 void	ruminant(int ruminant_count, t_list *a_head, t_list *b_head)
 {
-	int	is_cleanable;
-	int	pivot;
-
 	while (ruminant_count--)
 	{
 		if (a_head->prev->value + 1 == a_head->next->value)

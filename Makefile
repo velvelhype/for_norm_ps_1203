@@ -13,7 +13,6 @@
 NAME = push_swap
 CC = gcc
 CFLAGS = -Werror -Wall -Wextra
-CFLAGS =
 SRCS = pre_error_check.c \
 prepare_list.c \
 controls.c \
@@ -28,24 +27,16 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	make -C libft
 	$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
 
-run: all
-	./$(NAME) 3 2 1
-
-debug: CFLAGS+= -fsanitize=address
-debug: re
-N = 100
-R = 100
-ARG:= $(shell python3 -c 'import random; random.seed($(R)); print(*random.sample([i for i in range(0, 100)], $(N)))')
-
-test: re
-	cd ./push_swap_tester && python3 push_swap_tester.py -l 100 -c 300
-
 clean:
+	make clean -C libft
 	rm -f $(OBJS)
 
 fclean: clean
+	make fclean -C libft
 	rm -f $(NAME)
 
 re: fclean all
+	make re -C libft

@@ -12,31 +12,34 @@
 
 #include "libft.h"
 
+int	cpy_proc(int j, char const *s, char *cpy)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		cpy[j++] = s[i];
+		i++;
+	}
+	return (j);
+}
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	one;
 	size_t	two;
-	size_t	i;
 	size_t	j;
 	char	*cpy;
 
 	one = ft_strlen(s1);
 	two = ft_strlen(s2);
-	if (!(cpy = (char *)malloc(sizeof(char) * (one + two + 1))))
+	cpy = (char *)malloc(sizeof(char) * (one + two + 1));
+	if (!cpy)
 		return (NULL);
-	i = 0;
 	j = 0;
-	while (s1[i])
-	{
-		cpy[j++] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		cpy[j++] = s2[i];
-		i++;
-	}
+	j = cpy_proc(j, s1, cpy);
+	j = cpy_proc(j, s2, cpy);
 	cpy[j] = '\0';
 	return (cpy);
 }

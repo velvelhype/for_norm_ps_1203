@@ -48,10 +48,12 @@ int	main(int argc, char **argv)
 	t_list	*a_copy;
 	t_list	*b_head;
 
+	a_head = NULL;
+	b_head = NULL;
 	pre_error_check(argc, argv);
 	a_head = prepare_a_list(argc, argv, a_head);
 	a_copy = prepare_a_list(argc, argv, a_head);
-	tend_values(argc, a_head, a_copy);
+	tend_values(a_head, a_copy);
 	free_copy(a_copy);
 	b_head = prepare_b_list(b_head);
 	post_error_check(a_head, b_head);
